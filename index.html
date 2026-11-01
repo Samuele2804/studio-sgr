@@ -161,9 +161,11 @@ h2 { font-size: calc(clamp(2rem, 3.3vw, 3rem) * var(--site-heading-scale)); marg
 .check-row strong { display: block; font-size: .93rem; color: var(--site-on-background); }
 .check-row small { display: block; color: var(--ink-muted); margin-top: 3px; line-height: 1.45; }
 
-.progress-line { height: 8px; background: var(--line); border-radius: 99px; overflow: hidden; margin: 14px 0 8px; }
-.progress-line span { height: 100%; display: block; width: 0; background: var(--teal); transition: width .2s; }
-.progress-label { display: flex; justify-content: space-between; font-size: .84rem; color: var(--ink-muted); font-weight: 600; }
+/* Elenco puntato semplice per i requisiti */
+.requirements-bullet-list { margin: 16px 0; padding-left: 20px; color: var(--site-on-background); }
+.requirements-bullet-list li { margin-bottom: 12px; font-size: .92rem; line-height: 1.5; }
+.requirements-bullet-list li strong { color: var(--site-on-background); display: inline; }
+.requirements-bullet-list li small { display: block; color: var(--ink-muted); margin-top: 2px; }
 
 .callout { border-left: 4px solid var(--gold); background: var(--paper-soft); color: var(--site-on-background); padding: 16px 18px; margin: 18px 0; font-size: .92rem; border-radius: 0 4px 4px 0; }
 .callout strong { display: block; margin-bottom: 4px; color: var(--site-on-background); }
@@ -212,6 +214,35 @@ footer { background: var(--site-primary); color: #ffffff; border-top: 1px solid 
 
 .toast { position: fixed; bottom: 20px; right: 20px; z-index: 50; background: var(--site-primary); color: #ffffff; border: 1px solid var(--gold); padding: 13px 17px; border-radius: calc(5px * var(--site-radius-scale)); box-shadow: 0 10px 35px rgba(0,0,0,.3); display: none; max-width: 340px; font-size: 0.9rem; }
 .toast.show { display: block; }
+
+/* Box Informativo Tutela del Consumatore senza pulsanti/immagini */
+.consumer-protection-box {
+  margin-top: 30px;
+  background: var(--paper-soft);
+  border: 1px solid var(--line);
+  padding: 20px;
+  border-radius: calc(6px * var(--site-radius-scale));
+}
+.consumer-protection-box h3 {
+  margin-top: 0;
+  font-family: var(--site-font-heading);
+  color: var(--site-on-background);
+  font-size: 1.35rem;
+}
+.consumer-protection-box p {
+  color: var(--site-on-background);
+  font-size: 0.92rem;
+  margin-bottom: 10px;
+}
+.consumer-protection-box ul {
+  padding-left: 20px;
+  margin: 10px 0 0;
+}
+.consumer-protection-box li {
+  font-size: 0.9rem;
+  color: var(--site-on-background);
+  margin-bottom: 6px;
+}
 
 /* Animazione Evidenziazione Elemento Cliccato */
 .highlight-target {
@@ -362,14 +393,15 @@ footer { background: var(--site-primary); color: #ffffff; border-top: 1px solid 
           <span class="info-tag tag-law">Quadro normativo · da verificare sul testo vigente</span>
           <h3>Le condizioni da pianificare</h3>
           <p>Nel materiale del gruppo, il riferimento centrale è l'art. 34 TUF, insieme alle disposizioni attuative della Banca d'Italia. Tra gli elementi da predisporre figurano:</p>
-          <div class="check-list">
-            <label class="check-row"><input type="checkbox" class="task-check"><span><strong>Forma societaria e sede</strong><small>Società per azioni, con sede legale e direzione generale in Italia, secondo i requisiti normativi applicabili.</small></span></label>
-            <label class="check-row"><input type="checkbox" class="task-check"><span><strong>Esponenti aziendali e partecipanti qualificati</strong><small>Verificare requisiti di idoneità, onorabilità, professionalità, indipendenza e trasparenza previsti dalla disciplina.</small></span></label>
-            <label class="check-row"><input type="checkbox" class="task-check"><span><strong>Capitale iniziale e fondi propri</strong><small>Determinare l'importo richiesto in funzione della categoria di gestore e delle attività previste; pianificare anche i requisiti patrimoniali nel tempo.</small></span></label>
-            <label class="check-row"><input type="checkbox" class="task-check"><span><strong>Programma di attività</strong><small>Descrivere servizi, fondi previsti, clientela, strategia, canali distributivi, proiezioni economico-finanziarie e risorse.</small></span></label>
-            <label class="check-row"><input type="checkbox" class="task-check"><span><strong>Struttura organizzativa e controlli</strong><small>Definire governance, gestione dei rischi, controlli interni, sistemi informativi, deleghe e presidi sui conflitti.</small></span></label>
-          </div>
-          <div class="callout"><strong>Attenzione al capitale minimo</strong>Le bozze del gruppo riportano importi diversi per regimi diversi. Non usare una cifra unica come regola generale: l'importo va verificato sulle disposizioni di vigilanza vigenti e in relazione all'effettivo perimetro autorizzativo.</div>
+          
+          <!-- Elenco puntato semplice per i requisiti -->
+          <ul class="requirements-bullet-list">
+            <li><strong>Forma societaria e sede:</strong> <small>Società per azioni, con sede legale e direzione generale in Italia, secondo i requisiti normativi applicabili.</small></li>
+            <li><strong>Esponenti aziendali e partecipanti qualificati:</strong> <small>Verificare requisiti di idoneità, onorabilità, professionalità, indipendenza e trasparenza previsti dalla disciplina.</small></li>
+            <li><strong>Capitale iniziale e fondi propri:</strong> <small>Determinare l'importo richiesto in funzione della categoria di gestore e delle attività previste; pianificare anche i requisiti patrimoniali nel tempo.</small></li>
+            <li><strong>Programma di attività:</strong> <small>Descrivere servizi, fondi previsti, clientela, strategia, canali distributivi, proiezioni economico-finanziarie e risorse.</small></li>
+            <li><strong>Struttura organizzativa e controlli:</strong> <small>Definire governance, gestione dei rischi, controlli interni, sistemi informativi, deleghe e presidi sui conflitti.</small></li>
+          </ul>
         </div>
 
         <aside class="sidebar-container">
@@ -460,6 +492,18 @@ footer { background: var(--site-primary); color: #ffffff; border-top: 1px solid 
             <div class="step"><div class="step-no">C</div><div><h3>Adeguatezza e appropriatezza</h3><p>Non sono sinonimi: l'applicabilità dipende dal servizio prestato, dal tipo di operazione e dal quadro normativo pertinente. Non descriverle come un unico test universale.</p></div></div>
             <div class="step"><div class="step-no">D</div><div><h3>Conflitti d'interesse</h3><p>Identificare, prevenire o gestire i conflitti con procedure effettive; informare il cliente quando richiesto dalla disciplina applicabile.</p></div></div>
           </div>
+
+          <!-- Sezione Tutela del Consumatore riassuntiva in testo -->
+          <div class="consumer-protection-box">
+            <h3>Tutela del consumatore e trasparenza dei costi</h3>
+            <p>La trasparenza informativa costituisce il pilastro centrale per la protezione dell'investitore durante la commercializzazione:</p>
+            <ul>
+              <li><strong>Scenari di rischio e performance:</strong> Presentazione chiara dell'indicatore sintetico di rischio (SRI) e degli scenari di rendimento simulati su orizzonti temporali definiti.</li>
+              <li><strong>Trasparenza analitica dei costi:</strong> Dettaglio delle spese una tantum (ingresso/uscita), dei costi correnti annui (gestione e transazione) e delle commissioni di performance legate a benchmark di riferimento.</li>
+              <li><strong>Canali di ricorso e reclami:</strong> Presenza di procedure dedicate per la gestione tempestiva delle contestazioni scritte con possibilità di ricorso all'Arbitro per le Controversie Finanziarie (ACF).</li>
+            </ul>
+          </div>
+
         </div>
         <aside class="sidebar-container">
           <div class="sidebar-card">
@@ -514,28 +558,24 @@ footer { background: var(--site-primary); color: #ffffff; border-top: 1px solid 
     <section class="section" id="checklist">
       <div class="section-head">
         <div><p class="eyebrow">Strumento pratico</p><h2>Checklist preliminare dell'imprenditore</h2></div>
-        <p class="section-intro">Spunta le attività già affrontate. La lista è un promemoria orientativo, non sostituisce la verifica della normativa o una consulenza professionale.</p>
+        <p class="section-intro">Le caselle sono precompilate a titolo indicativo e non modificabili direttamente.</p>
       </div>
       <div class="content-grid">
         <div class="panel">
-          <h3>Stato di preparazione</h3>
-          <p>Le selezioni aggiornano automaticamente l'avanzamento della checklist.</p>
-          <div class="progress-line" role="progressbar" aria-label="Avanzamento checklist" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressBar"><span id="progressFill"></span></div>
-          <div class="progress-label"><span id="progressText">0 di 10 attività completate</span><span id="progressPercent">0%</span></div>
+          <h3>Attività completate</h3>
           <div class="check-list" id="mainChecklist">
-            <label class="check-row"><input type="checkbox" class="main-task"><span><strong>Definire attività e prodotti</strong><small>Gestione collettiva, eventuali servizi d'investimento, tipologie di OICR e clientela.</small></span></label>
-            <label class="check-row"><input type="checkbox" class="main-task"><span><strong>Verificare i requisiti societari</strong><small>Forma, sede, statuto, partecipanti ed esponenti aziendali.</small></span></label>
-            <label class="check-row"><input type="checkbox" class="main-task"><span><strong>Calcolare il fabbisogno patrimoniale</strong><small>Capitale iniziale, fondi propri e sostenibilità finanziaria.</small></span></label>
-            <label class="check-row"><input type="checkbox" class="main-task"><span><strong>Redigere programma e piano economico</strong><small>Attività, mercato, costi, proiezioni, rischi e distribuzione.</small></span></label>
-            <label class="check-row"><input type="checkbox" class="main-task"><span><strong>Disegnare governance e controlli</strong><small>Ruoli, deleghe, gestione rischi, compliance e sistemi informativi.</small></span></label>
-            <label class="check-row"><input type="checkbox" class="main-task"><span><strong>Preparare la documentazione autorizzativa</strong><small>Confronto con le guide applicative e i moduli aggiornati dell'autorità.</small></span></label>
-            <label class="check-row"><input type="checkbox" class="main-task"><span><strong>Verificare il percorso di autorizzazione e iscrizione</strong><small>Non avviare attività riservate prima che ne ricorrano le condizioni.</small></span></label>
-            <label class="check-row"><input type="checkbox" class="main-task"><span><strong>Predisporre informativa e processi distributivi</strong><small>KID e documenti richiesti, target market, costi, rischi e canali.</small></span></label>
-            <label class="check-row"><input type="checkbox" class="main-task"><span><strong>Attivare il monitoraggio continuativo</strong><small>Segnalazioni, controlli, aggiornamento procedure e gestione anomalie.</small></span></label>
-            <label class="check-row"><input type="checkbox" class="main-task"><span><strong>Valutare preventivamente ogni espansione</strong><small>Autorizzazioni, comunicazioni, notifiche cross-border e nuovi prodotti.</small></span></label>
+            <label class="check-row"><input type="checkbox" class="main-task" checked disabled><span><strong>Definire attività e prodotti</strong><small>Gestione collettiva, eventuali servizi d'investimento, tipologie di OICR e clientela.</small></span></label>
+            <label class="check-row"><input type="checkbox" class="main-task" checked disabled><span><strong>Verificare i requisiti societari</strong><small>Forma, sede, statuto, partecipanti ed esponenti aziendali.</small></span></label>
+            <label class="check-row"><input type="checkbox" class="main-task" checked disabled><span><strong>Calcolare il fabbisogno patrimoniale</strong><small>Capitale iniziale, fondi propri e sostenibilità finanziaria.</small></span></label>
+            <label class="check-row"><input type="checkbox" class="main-task" checked disabled><span><strong>Redigere programma e piano economico</strong><small>Attività, mercato, costi, proiezioni, rischi e distribuzione.</small></span></label>
+            <label class="check-row"><input type="checkbox" class="main-task" checked disabled><span><strong>Disegnare governance e controlli</strong><small>Ruoli, deleghe, gestione rischi, compliance e sistemi informativi.</small></span></label>
+            <label class="check-row"><input type="checkbox" class="main-task" checked disabled><span><strong>Preparare la documentazione autorizzativa</strong><small>Confronto con le guide applicative e i moduli aggiornati dell'autorità.</small></span></label>
+            <label class="check-row"><input type="checkbox" class="main-task" checked disabled><span><strong>Verificare il percorso di autorizzazione e iscrizione</strong><small>Non avviare attività riservate prima che ne ricorrano le condizioni.</small></span></label>
+            <label class="check-row"><input type="checkbox" class="main-task" checked disabled><span><strong>Predisporre informativa e processi distributivi</strong><small>KID e documenti richiesti, target market, costi, rischi e canali.</small></span></label>
+            <label class="check-row"><input type="checkbox" class="main-task" checked disabled><span><strong>Attivare il monitoraggio continuativo</strong><small>Segnalazioni, controlli, aggiornamento procedure e gestione anomalie.</small></span></label>
+            <label class="check-row"><input type="checkbox" class="main-task" checked disabled><span><strong>Valutare preventivamente ogni espansione</strong><small>Autorizzazioni, comunicazioni, notifiche cross-border e nuovi prodotti.</small></span></label>
           </div>
           <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
-            <button class="btn btn-primary" id="resetChecklist" type="button">Azzera checklist</button>
             <button class="btn" style="border:1px solid var(--line);background:var(--paper);color:var(--site-on-background)" id="printChecklist" type="button">Stampa / salva PDF</button>
           </div>
         </div>
@@ -604,7 +644,6 @@ footer { background: var(--site-primary); color: #ffffff; border-top: 1px solid 
 
 <script>
 (function(){
-  // Disabilita il ripristino dello scorrimento del browser per forzare l'inizio sempre in cima (Header/Banner)
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
@@ -667,11 +706,6 @@ footer { background: var(--site-primary); color: #ffffff; border-top: 1px solid 
     showSection(sectionId, true, targetSelector);
   }));
 
-  // Inizializzazione della pagina fissa in cima al caricamento (mostra subito il banner)
-  showSection('percorso', false);
-  window.scrollTo(0, 0);
-  window.addEventListener('load', () => window.scrollTo(0, 0));
-
   const toast = document.getElementById('toast');
   let toastTimer;
   function showToast(message){
@@ -684,28 +718,7 @@ footer { background: var(--site-primary); color: #ffffff; border-top: 1px solid 
   const quickChecks = document.querySelectorAll('.task-check');
   quickChecks.forEach(input => input.addEventListener('change', () => showToast(input.checked ? 'Voce contrassegnata come verificata.' : 'Voce rimossa dalla selezione.')));
 
-  const tasks = Array.from(document.querySelectorAll('.main-task'));
-  const progressFill = document.getElementById('progressFill'),
-        progressText = document.getElementById('progressText'),
-        progressPercent = document.getElementById('progressPercent'),
-        progressBar = document.getElementById('progressBar');
-
-  function updateProgress(){
-    const done = tasks.filter(t => t.checked).length,
-          pct = tasks.length ? Math.round(done / tasks.length * 100) : 0;
-    progressFill.style.width = pct + '%';
-    progressText.textContent = done + ' di ' + tasks.length + ' attività completate';
-    progressPercent.textContent = pct + '%';
-    progressBar.setAttribute('aria-valuenow', String(pct));
-  }
-
-  tasks.forEach(t => t.addEventListener('change', updateProgress));
-  document.getElementById('resetChecklist').addEventListener('click', () => {
-    tasks.forEach(t => t.checked = false);
-    updateProgress();
-    showToast('Checklist azzerata.');
-  });
-  document.getElementById('printChecklist').addEventListener('click', () => window.print());
+  document.getElementById('printChecklist')?.addEventListener('click', () => window.print());
 
   const searchForm = document.getElementById('globalSearch'),
         searchInput = document.getElementById('siteSearch');
@@ -725,8 +738,6 @@ footer { background: var(--site-primary); color: #ffffff; border-top: 1px solid 
       showToast('Nessun risultato trovato. Prova con un altro termine.');
     }
   });
-
-  updateProgress();
 })();
 </script>
 </body>
